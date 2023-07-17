@@ -1,0 +1,17 @@
+This README file contains information on the contents of the meta-ssd1309 layer.
+
+This layer adds support for an SSD1309 OLED display to an Olinuxino A20 board.
+
+Dependencies
+============
+
+  URI: https://github.com/linux-sunxi/meta-sunxi
+  branch: kirkstone
+
+
+I. Adding the meta-ssd1309 layer to your build
+=================================================
+
+Run 'bitbake-layers add-layer meta-ssd1309'
+
+
