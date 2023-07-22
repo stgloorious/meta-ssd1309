@@ -1,0 +1,13 @@
+diff --git a/sys_config/a20/a20-olinuxino_micro.fex b/sys_config/a20/a20-olinuxino_micro.fex
+index 545a090..c0fb089 100644
+--- a/sys_config/a20/a20-olinuxino_micro.fex
++++ b/sys_config/a20/a20-olinuxino_micro.fex
+@@ -64,7 +64,7 @@ uart_debug_tx = port:PF02<4><1><default><default>
+ uart_debug_rx = port:PF04<4><1><default><default>
+ 
+ [jtag_para]
+-jtag_enable = 0
++jtag_enable = 1
+ jtag_ms = port:PB14<3><default><default><default>
+ jtag_ck = port:PB15<3><default><default><default>
+ jtag_do = port:PB16<3><default><default><default>
