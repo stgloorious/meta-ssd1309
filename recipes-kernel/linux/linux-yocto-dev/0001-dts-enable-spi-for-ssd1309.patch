@@ -1,32 +1,18 @@
-diff --git a/arch/arm/boot/dts/sun7i-a20-olinuxino.dts b/arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts
-index a1b89b2..6005530 100644
+diff --git a/arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts b/arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts
+index a1b89b2a2999..dc27aaad7a9d 100644
 --- a/arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts
 +++ b/arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts
-@@ -308,6 +308,13 @@
+@@ -308,6 +308,13 @@ &spi1 {
  	pinctrl-0 = <&spi1_pi_pins>,
  		    <&spi1_cs0_pi_pin>;
  	status = "okay";
 +    ssd130x@0 {
-+        compatible="solomon,ssd1309"; 
++        compatible="solomon,ssd1309";
 +        reg=<0>;
 +        status="okay";
 +        spi-max-frequency=<500000>;
-+        dc-gpios = <&pio 7 2 GPIO_ACTIVE_HIGH>; 
++        dc-gpios = <&pio 7 0 GPIO_ACTIVE_HIGH>;
 +    };
  };
  
  &spi2 {
-@@ -315,6 +322,13 @@
- 	pinctrl-0 = <&spi2_pc_pins>,
- 		    <&spi2_cs0_pc_pin>;
- 	status = "okay";
-+    ssd130x@0 {
-+        compatible="solomon,ssd1309"; 
-+        reg=<0>;
-+        status="okay";
-+        spi-max-frequency=<500000>;
-+        dc-gpios = <&pio 7 1 GPIO_ACTIVE_HIGH>; 
-+    };
- };
- 
- &uart0 {
