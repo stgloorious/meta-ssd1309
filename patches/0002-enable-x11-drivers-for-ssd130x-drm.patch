@@ -1,0 +1,13 @@
+diff --git a/meta-sunxi/conf/machine/olinuxino-a20.conf b/meta-sunxi/conf/machine/olinuxino-a20.conf
+index fc6620d..e505e2a 100644
+--- a/meta-sunxi/conf/machine/olinuxino-a20.conf
++++ b/meta-sunxi/conf/machine/olinuxino-a20.conf
+@@ -7,4 +7,6 @@ require conf/machine/include/sun7i.inc
+ 
+ KERNEL_DEVICETREE = "sun7i-a20-olinuxino-micro.dtb"
+ UBOOT_MACHINE = "A20-OLinuXino_MICRO_config"
+-SUNXI_FEX_FILE = "sys_config/a20/a20-olinuxino_micro.fex"
+\ No newline at end of file
++SUNXI_FEX_FILE = "sys_config/a20/a20-olinuxino_micro.fex"
++
++XSERVER += "xf86-video-fbdev xf86-video-modesetting"

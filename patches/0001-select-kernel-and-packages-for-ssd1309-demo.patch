@@ -1,0 +1,20 @@
+diff --git a/meta-poky/conf/layer.conf b/meta-poky/conf/layer.conf
+index f43c875c2a..20c707eee3 100644
+--- a/meta-poky/conf/layer.conf
++++ b/meta-poky/conf/layer.conf
+@@ -18,3 +18,15 @@ LAYERVERSION_yocto = "3"
+ LAYERDEPENDS_yocto = "core"
+ 
+ REQUIRED_POKY_BBLAYERS_CONF_VERSION = "2"
++
++# Dev kernel
++PREFERRED_PROVIDER_virtual/kernel = "linux-yocto-dev"
++
++# Debug
++EXTRA_IMAGE_FEATURES += " tools-debug debug-tweaks"
++
++# For demo
++PACKAGE_INSTALL:append = " xclock twm ffmpeg mpv"
++PREFERRED_PROVIDER_ffmpeg = "ffmpeg_5.0.1"
++LICENSE_FLAGS_ACCEPTED = "commercial"
++
