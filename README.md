@@ -15,8 +15,8 @@ The `DC` signal is connected to `PH0` (`GPIO-3` pin 5), the `RES` signal to
 `PH7` (`GPIO-3` pin 9). 
 
 ### Device tree options
-Apparently some SSD1309 are wired in weird configurations, i.e., remapped
-rows and column and offsets. 
+Apparently some SSD1309 display modules are wired in weird configurations,
+i.e., they have remapped rows and column and offsets. 
 To configure this, the kernel driver provides multiple custom
 devicetree bindings (e.g., segment-no-remap).
 I found those by trial-and-error.
