@@ -25,9 +25,16 @@ I found those by trial-and-error.
 To create this demo, I enabled the build of an X server in the Yocto configuration
 and installed twm, xclock and mpv (for video playback) and their dependencies.
 However, it should also be possible to skip the X server and directly access
-/dev/fb0 for simple applications. Wayland should work as well.
+`/dev/fb0` for simple applications. Wayland should work as well.
 
 I use Yocto Kirkstone to set up this demo.
+
+### Kernel
+I am using the linux-yocto-dev kernel v6.3. Because meta-sunxi does not 
+provide a defconfig for this kernel version, I supply it in this layer.
+For a real project, it would probably better to put this into a separate layer
+and to only use configuration fragments to enable the ssd130x drivers 
+in this layer.
 
 ### Dependencies
 This yocto layer depends on
@@ -43,6 +50,10 @@ Adding the meta-ssd1309 layer to your build
 Run 'bitbake-layers add-layer meta-ssd1309'
 ~~~
 
-The changes I made to my distro, but are not strictly necessary
-to get the OLED working, are found in /patches
+The changes I made to my distro and meta-sunxi are found in /patches.
+
+To build the image, I used
+~~~
+bitbake core-image-x11
+~~~
 
