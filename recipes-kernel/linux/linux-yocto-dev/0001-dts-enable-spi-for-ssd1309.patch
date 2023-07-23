@@ -2,18 +2,22 @@ diff --git a/arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts b/arch/arm/boot/dts
 index a1b89b2a2999..08100b9c3f68 100644
 --- a/arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts
 +++ b/arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts
-@@ -308,6 +308,15 @@ &spi1 {
+@@ -308,6 +308,19 @@ &spi1 {
  	pinctrl-0 = <&spi1_pi_pins>,
  		    <&spi1_cs0_pi_pin>;
  	status = "okay";
 +    ssd130x@0 {
 +        compatible="solomon,ssd1309";
 +        solomon,width=<128>;
-+        solomon,heigth=<64>;
++        solomon,height=<64>;
++        solomon,segment-no-remap;
++        solomon,com-offset=<0>;
++        solomon,page-offset=<0>;
 +        reg=<0>;
 +        status="okay";
-+        spi-max-frequency=<500000>;
++        spi-max-frequency=<5000000>;
 +        dc-gpios = <&pio 7 0 GPIO_ACTIVE_HIGH>;
++        reset-gpios = <&pio 7 7 GPIO_ACTIVE_LOW>;
 +    };
  };
  
