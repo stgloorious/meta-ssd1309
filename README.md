@@ -5,8 +5,8 @@ I use the in-tree ssd130x DRM driver in the Linux mainline kernel v6.3, allowing
 me to use X11 to draw to the screen via the /dev/fb0 framebuffer device and 
 X11 fbdev driver. The Linux image is created using Yocto Kirkstone.
 
-![OLED X11 Demo](docs/ssd1309_demo.gif){width=50%}
-![OLED Video Demo](docs/oled_rickroll.gif){width=50%}
+![OLED X11 Demo](docs/ssd1309_demo.gif)
+![OLED Video Demo](docs/oled_rickroll.gif)
 
 ## Hardware
 I use the display in SPI mode. On the Olinuxino board, I connected it to 
