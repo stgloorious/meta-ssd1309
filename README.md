@@ -2,8 +2,8 @@
 
 In this demo, I use an 128x64 OLED display with an Olinuxino A20 Micro board.
 I use the in-tree ssd130x DRM driver in the Linux mainline kernel v6.3, allowing
-me to use X11 to draw to the screen via the /dev/fb0 framebuffer device and 
-X11 fbdev driver. The Linux image is created using Yocto Kirkstone.
+me to use X11 to draw to the screen via X11 modesetting driver. 
+The Linux image is created using Yocto Kirkstone.
 
 ![OLED X11 Demo](docs/ssd1309_demo.gif)
 ![OLED Video Demo](docs/oled_rickroll.gif)
@@ -18,14 +18,15 @@ The `DC` signal is connected to `PH0` (`GPIO-3` pin 5), the `RES` signal to
 Apparently some SSD1309 display modules are wired in weird configurations,
 i.e., they have remapped rows and column and offsets. 
 To configure this, the kernel driver provides multiple custom
-devicetree bindings (e.g., segment-no-remap).
-I found those by trial-and-error.
+devicetree bindings (e.g., solomon,segment-no-remap).
+I found those values by trial-and-error.
 
 ## Demo build
 To create this demo, I enabled the build of an X server in the Yocto configuration
 and installed twm, xclock and mpv (for video playback) and their dependencies.
 However, it should also be possible to skip the X server and directly access
-`/dev/fb0` for simple applications. Wayland should work as well.
+`/dev/fb0` for simple applications, as the DRM driver also provides this legacy
+framebuffer interface. Wayland should work as well.
 
 I use Yocto Kirkstone to set up this demo.
 
