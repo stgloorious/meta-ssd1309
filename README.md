@@ -32,7 +32,7 @@ I use Yocto Kirkstone to set up this demo.
 ### Kernel
 I am using the linux-yocto-dev kernel v6.3. Because meta-sunxi does not 
 provide a defconfig for this kernel version, I supply it in this layer.
-For a real project, it would probably better to put this into a separate layer
+For a real project, it would probably be better to put this into a separate layer
 and to only use configuration fragments to enable the ssd130x drivers 
 in this layer.
 
