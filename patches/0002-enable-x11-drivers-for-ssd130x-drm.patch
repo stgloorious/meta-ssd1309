@@ -10,4 +10,4 @@ index fc6620d..e505e2a 100644
 \ No newline at end of file
 +SUNXI_FEX_FILE = "sys_config/a20/a20-olinuxino_micro.fex"
 +
-+XSERVER += "xf86-video-fbdev xf86-video-modesetting"
++XSERVER += "xf86-video-modesetting"
